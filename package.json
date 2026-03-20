@@ -28,7 +28,6 @@
     "iconify-icon": "^3.0.2",
     "path": "^0.12.7",
     "react-apexcharts": "^2.0.1",
-    "react-simple-dashboard": "file:react-simple-dashboard-1.0.0.tgz",
     "swiper": "^12.1.2"
   },
   "peerDependencies": {
