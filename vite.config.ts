@@ -17,7 +17,7 @@ export default defineConfig({
         cssCodeSplit: true,
         lib: {
             entry: path.resolve(__dirname, 'src/index.ts'),
-            name: 'react-simple-dashboard',
+            name: 'react-easy-dashboard',
             formats: ['es', 'umd'],
             fileName: (format) => `index.${format}.js`,
         },
