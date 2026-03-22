@@ -121,7 +121,7 @@ const Footer = (theme: any) => {
       disableRipple
       sx={{ "&:hover": { transform: "scale(1.04)" } }}
       className="p-0">
-      <CustomeAvatar src={images} border={3} width={48} height={48} />
+      <CustomeAvatar src={defaultImages.avatars.avatar1} border={3} width={48} height={48} />
     </IconButton>
     <Typography variant='subtitle1' mt={1}>Rajat Jayswal</Typography>
     <Typography variant='body2' sx={{ color: 'text.disabled', mb: 2 }}>rajatjayswal80@mail.com</Typography>
