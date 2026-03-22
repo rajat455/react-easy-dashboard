@@ -1,4 +1,4 @@
-import { Box, AppBar, IconButton, Container, Typography, useMediaQuery, useScrollTrigger, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, Stack, Badge, Icon } from "@mui/material";
+import { Box, AppBar, IconButton, Container, Typography, useMediaQuery, useScrollTrigger, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, Stack, Badge } from "@mui/material";
 import { alpha, useTheme } from "@mui/material/styles";
 import { HEADER } from "./config-layout";
 import { useSettings } from "../../context/settingContext";
@@ -157,9 +157,8 @@ export default function Header({ themeOptions }: Props) {
                     onClick={() => onChangeLayout("vertical")}
                     sx={{ mr: 1, color: "text.secondary", display: { sm: 'none' }, fontSize: 24 }}
                 >
-                    <Icon>
+                    
                         <MenuIcon />
-                    </Icon>
                 </IconButton>}
                 <Typography variant="h6" color="text.primary" mb={0}>
                     {rendertitle(theme, settings)}

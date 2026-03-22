@@ -48,7 +48,6 @@ export default function WelcomeBanner({ backgroundImage }: Props) {
             <Box flex={1}
                 height={240}
             >
-                {/* <Graph1Svg /> */}
             </Box>
         </Card>
     )

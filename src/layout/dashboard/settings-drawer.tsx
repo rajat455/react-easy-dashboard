@@ -3,7 +3,7 @@ import AntSwitch from '../../components/antSwitch';
 import CustomeSlider from '../../components/customeSlider';
 import { useSettings } from '../../context/settingContext';
 import { colorPresets as C, fonts as F } from '../../theme/themeUtils';
-import { CloseIcon, ColorPresetsIcon, ContrastIcon, FontsIcon, FullScreenIcon, Icons, InfoIcon, Layout1Icon, Layout2Icon, Layout3Icon, NightModeIcon, ResetIcon, RightToLeftIcon, WindowScreenIcon } from '../../theme/icons';
+import { CloseIcon, ColorPresetsIcon, ContrastIcon, FontsIcon, FullScreenIcon, InfoIcon, Layout1Icon, Layout2Icon, Layout3Icon, NightModeIcon, ResetIcon, RightToLeftIcon, WindowScreenIcon } from '../../theme/icons';
 import { SettingsValueProps, ThemeOptions } from '../../theme/types';
 import { useEffect } from 'react';
 import { defaultImages } from '../../theme/images';

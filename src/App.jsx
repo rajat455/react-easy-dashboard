@@ -1,8 +1,7 @@
 import './App.css'
 import { useMemo, useState } from 'react'
 import { navConfig, fonts, colorPresets, ThemeProvider, DashboardLayout, CustomeAvatar, SettingsDrawer, SettingsIcon, NotificationIcon, ContactIcon, defaultImages } from "./index"
-import { Badge, Box, Button, Container, Grid, Icon, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
-import WelcomeBanner from './components/incomplate/welcomeBenner'
+import { Badge, Box, Button, Container, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 
 
 function App() {
