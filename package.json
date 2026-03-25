@@ -1,6 +1,6 @@
 {
   "name": "react-easy-dashboard",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
@@ -25,8 +25,7 @@
     "@iconify/react": "^6.0.2",
     "framer-motion": "^12.31.1",
     "iconify-icon": "^3.0.2",
-    "path": "^0.12.7",
-    "react-easy-dashboard": "^1.0.8"
+    "path": "^0.12.7"
   },
   "peerDependencies": {
     "@emotion/react": "^11.14.0",
