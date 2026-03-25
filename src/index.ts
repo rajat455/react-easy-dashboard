@@ -3,7 +3,7 @@ export type { SettingsValueProps, ColorPreset, ThemeMode, ThemeOptions, ThemeLay
 
 // 3. Theme Configuration & Utils
 export { colorPresets, commonBlack, pxToRem, commonWhite, getCustomShadows, getPalette, getTypography, paletteGray, fonts } from "./theme/themeUtils";
-export { AppIcon,ArrowLeftIcon,ArrowRightIcon,BankingIcon,BlogIcon,BookingIcon,CalendarIcon,ChatIcon,CloseIcon,ColorPresetsIcon,CompactIcon,ContactIcon,ContrastIcon,CourseIcon,EcommerceIcon,AnalyticsIcon,FileIcon,FileManagerIcon,FontsIcon,FullScreenIcon,InfoIcon,InvoiceIcon,JobIcon,Layout1Icon,Layout2Icon,Layout3Icon,MailIcon,MenuIcon,NightModeIcon,NotificationIcon,OrderIcon,PermissionIcon,ProductIcon,ResetIcon,RightToLeftIcon,SettingsIcon,TourIcon,UserIcon,WindowScreenIcon } from "./theme/icons"
+export { AppIcon,ArrowLeftIcon,ArrowRightIcon,BankingIcon,BlogIcon,BookingIcon,CalendarIcon,ChatIcon,CloseIcon,ColorPresetsIcon,CompactIcon,ContactIcon,ContrastIcon,CourseIcon,EcommerceIcon,AnalyticsIcon,FileIcon,FileManagerIcon,FontsIcon,FullScreenIcon,InfoIcon,InvoiceIcon,JobIcon,Layout1Icon,Layout2Icon,Layout3Icon,MailIcon,MenuIcon,NightModeIcon,NotificationIcon,OrderIcon,PermissionIcon,ProductIcon,ResetIcon,RightToLeftIcon,SettingsIcon,TourIcon,UserIcon,WindowScreenIcon , LogoIcon} from "./theme/icons"
 export {defaultImages} from "./theme/images"
 
 // 2. Providers & Context Hooks

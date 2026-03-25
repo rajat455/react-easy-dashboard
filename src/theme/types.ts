@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { ColorPresets, Fonts } from "./themeUtils";
+import { Theme } from "@mui/material/styles";
 
 export type ThemeMode = "light" | "dark"
 export type ColorPreset = 'default' | "cyan" | "purple" | "blue" | "yellow" | "red"
@@ -29,13 +30,13 @@ export interface NavigationList {
 export interface ThemeOptions {
   fonts: Fonts[],
   colorPresets: ColorPresets[]
-  renderLogo?: (theme: any, settings: SettingsValueProps) => ReactNode;
-  renderNavItem?: (navItem: any, theme: any, settings: SettingsValueProps) => ReactNode;
+  renderLogo?: (theme: Theme, settings: SettingsValueProps) => ReactNode;
+  renderNavItem?: (navItem: any, theme: Theme, settings: SettingsValueProps) => ReactNode;
   navigationList?: NavigationList[];
-  renderFooter?: (theme: any, settings: SettingsValueProps) => ReactNode;
+  renderFooter?: (theme: Theme, settings: SettingsValueProps) => ReactNode;
   sideBarHeader?: {
     title: string;
-    renderTitle: (theme: any, settings: SettingsValueProps) => ReactNode | string
-    renderIcons: (theme: any, settings: SettingsValueProps) => ReactNode;
+    renderTitle: (theme: Theme, settings: SettingsValueProps) => ReactNode | string
+    renderIcons: (theme: Theme, settings: SettingsValueProps) => ReactNode;
   }
 }

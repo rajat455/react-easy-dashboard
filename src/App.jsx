@@ -1,9 +1,7 @@
 import './App.css'
 import { useMemo, useState } from 'react'
-import { navConfig, fonts, colorPresets, ThemeProvider, DashboardLayout, CustomeAvatar, SettingsDrawer, SettingsIcon, NotificationIcon, ContactIcon, defaultImages, WelcomeBanner } from "./index"
+import { navConfig, fonts, colorPresets, ThemeProvider, DashboardLayout, CustomeAvatar, SettingsDrawer, SettingsIcon, NotificationIcon, ContactIcon, defaultImages, WelcomeBanner, LogoIcon } from "./index"
 import { Badge, Box, Button, Container, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
-
-
 
 function App() {
   const [openSettings, setOpenSettings] = useState(false)
@@ -25,8 +23,8 @@ function App() {
       navigationList: [...navConfig],
       fonts: [...fonts],
       colorPresets: colorPresets,
-      renderLogo: (theme) => {
-        return <svg width="100%" height="100%" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="_r_4_-1" x1="152" y1="167.79" x2="65.523" y2="259.624" gradientUnits="userSpaceOnUse"><stop stopColor={theme.palette.primary.dark}></stop><stop offset="1" stopColor={theme.palette.primary.main}></stop></linearGradient><linearGradient id="_r_4_-2" x1="86" y1="128" x2="86" y2="384" gradientUnits="userSpaceOnUse"><stop stopColor={theme.palette.primary.light}></stop><stop offset="1" stopColor={theme.palette.primary.main}></stop></linearGradient><linearGradient id="_r_4_-3" x1="402" y1="288" x2="402" y2="384" gradientUnits="userSpaceOnUse"><stop stopColor={theme.palette.primary.light}></stop><stop offset="1" stopColor={theme.palette.primary.main}></stop></linearGradient></defs><path fill="url(#_r_4_-1)" d="M86.352 246.358C137.511 214.183 161.836 245.017 183.168 285.573C165.515 317.716 153.837 337.331 148.132 344.418C137.373 357.788 125.636 367.911 111.202 373.752C80.856 388.014 43.132 388.681 14 371.048L86.352 246.358Z"></path><path fill="url(#_r_4_-2)" fillRule="evenodd" clipRule="evenodd" d="M444.31 229.726C398.04 148.77 350.21 72.498 295.267 184.382C287.751 198.766 282.272 226.719 270 226.719V226.577C257.728 226.577 252.251 198.624 244.735 184.24C189.79 72.356 141.96 148.628 95.689 229.584C92.207 235.69 88.862 241.516 86 246.58C192.038 179.453 183.11 382.247 270 383.858V384C356.891 382.389 347.962 179.595 454 246.72C451.139 241.658 447.794 235.832 444.31 229.726Z"></path><path fill="url(#_r_4_-3)" fillRule="evenodd" clipRule="evenodd" d="M450 384C476.509 384 498 362.509 498 336C498 309.491 476.509 288 450 288C423.491 288 402 309.491 402 336C402 362.509 423.491 384 450 384Z"></path></svg>
+      renderLogo: () => {
+        return <LogoIcon />
       },
       renderNavItem: (item, theme, settings) => {
         const vertical = settings.themeLayout === "vertical"
@@ -143,9 +141,14 @@ function App() {
   return (
     <ThemeProvider themeOptions={ThemeOptions} settings={settings} >
       <DashboardLayout themeOptions={ThemeOptions}>
-        <Container sx={{ paddingX: { lg: 5, md: 1.5, sm: 1.5, xs: 1.5 }, paddingTop: 1, paddingBottom: 8, minWidth: "100%", maxWidth: "calc(100vw - 40px)" }}>
-          <Grid container={true} spacing={{ lg: 3, md: 1.5, sm: 2, xs: 2 }}>
-            <Grid size={{ lg: 12, md: 12, sm: 12, xs: 12 }}>
+        <Container maxWidth={"xl"}  sx={{  paddingTop: 1, paddingBottom: 8,  }}>
+          <Grid container={true} 
+          spacing={{ lg: 3, md: 1.5, sm: 2, xs: 2 }}
+          >
+            <Grid size={{ lg: 6, md: 12, sm: 12, xs: 12 }}>
+              <WelcomeBanner bannerHeading='Welcome back 👋 Jaydon Frankie' sortDescription="If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything." color="info" onGo={() => console.log("Click")} backgroundImage={defaultImages.backgrounds.welcomeBanner1} />
+            </Grid>
+            <Grid size={{ lg: 6, md: 12, sm: 12, xs: 12 }}>
               <WelcomeBanner bannerHeading='Welcome back 👋 Jaydon Frankie' sortDescription="If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything." color="info" onGo={() => console.log("Click")} backgroundImage={defaultImages.backgrounds.welcomeBanner1} />
             </Grid>
           </Grid>

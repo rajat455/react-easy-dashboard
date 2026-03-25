@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider, StyledEngineProvider, alpha, CssBaseline, P
 import { getTypography, getPalette, getCustomShadows, fonts as F, colorPresets as C, ColorPresets } from "./themeUtils";
 import { useSettings } from "../context/settingContext";
 import { ThemeMode, ThemeOptions } from "./types";
-import "@mui/material/styles";
+import {Theme as DTheme} from "@mui/material/styles";
 
 interface Props {
     children: React.ReactNode;
@@ -12,7 +12,7 @@ interface Props {
 
 
 declare module '@mui/material/styles' {
-    interface Theme {
+    interface Theme extends DTheme {
         shadows: string[] & {
             primary: string;
             secondary: string;
@@ -37,6 +37,7 @@ declare module '@mui/material/styles' {
         shape: Shape;
     }
 }
+
 export default function CustomeThemeProvider({ children, themeOptions }: Props) {
     const { settings } = useSettings()
     const fonts = themeOptions?.fonts || F
