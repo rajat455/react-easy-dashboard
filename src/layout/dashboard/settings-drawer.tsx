@@ -93,11 +93,11 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                     }} color='error' variant='dot'>
                         <IconButton size="small" onClick={() => {
                             onResetSettings(initialSettings || settings)
-                        }} sx={{fontSize:20, color: 'text.secondary' }}>
+                        }} sx={{ fontSize: 20, color: 'text.secondary' }}>
                             <ResetIcon />
                         </IconButton>
                     </Badge>
-                    <IconButton size="small" onClick={onClose} sx={{fontSize:20, color: 'text.secondary' }}>
+                    <IconButton size="small" onClick={onClose} sx={{ fontSize: 20, color: 'text.secondary' }}>
                         <CloseIcon />
                     </IconButton>
                 </Stack>
@@ -118,7 +118,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                 }}>
 
                 <Stack direction={"row"} spacing={2} mb={2}>
-                    <Button  onClick={handelModeChange} variant='outlined' color='secondary' sx={{fontSize:theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
+                    <Button onClick={handelModeChange} variant='outlined' color='secondary' sx={{ fontSize: theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
                         <Stack mb={2.7} width={"100%"} alignItems={"center"} direction={"row"} justifyContent={"space-between"}>
                             <NightModeIcon />
                             <AntSwitch color="secondary" checked={themeMode === "dark"} inputProps={{ 'aria-label': 'ant design' }} />
@@ -128,7 +128,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                     <Button color='secondary' onClick={() => {
                         toggleContrast()
 
-                    }} variant='outlined' sx={{fontSize:theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
+                    }} variant='outlined' sx={{ fontSize: theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
                         <Stack mb={2.7} width={"100%"} alignItems={"center"} direction={"row"} justifyContent={"space-between"}>
                             <ContrastIcon />
                             <AntSwitch color='secondary' checked={isContrast ? true : false} inputProps={{ 'aria-label': 'ant design' }} />
@@ -140,7 +140,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                     <Button onClick={() => {
                         toggleReverseLayout()
 
-                    }} color='secondary' variant='outlined' sx={{fontSize:theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
+                    }} color='secondary' variant='outlined' sx={{ fontSize: theme.typography.h4, py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column" }}>
                         <Stack mb={2.7} width={"100%"} alignItems={"center"} direction={"row"} justifyContent={"space-between"}>
                             <RightToLeftIcon />
                             <AntSwitch checked={reverseLayout ? true : false} color='secondary' inputProps={{ 'aria-label': 'ant design' }} />
@@ -150,7 +150,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                     <Button onClick={() => {
                         toggleFullScreen()
                     }} color='secondary' variant='outlined' sx={{
-                        fontSize:theme.typography.h4,
+                        fontSize: theme.typography.h4,
                         py: 2.1, px: 2.3, flex: 1, alignItems: 'start', flexDirection: "column"
                     }}>
                         <Stack mb={2.7} width={"100%"} alignItems={"center"} direction={"row"} justifyContent={"space-between"}>
@@ -160,55 +160,6 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                         <Typography variant="caption" >{!isFullScreen ? "Full Screen" : "Windowed"}</Typography>
                     </Button>
                 </Stack>
-
-
-
-                <Paper sx={{
-                    boxShadow: "none",
-                    px: 2,
-                    py: 2,
-                    mb: 4,
-                    position: "relative",
-                    top: 0,
-                    left: 0,
-                    border: "1px solid",
-                    borderColor: (theme) => alpha(theme.palette.grey[500], 0.12),
-                    background: "transparent",
-                }}  >
-                    <Chip label="Fonts" variant='filled' color='secondary' size='small' sx={{ fontSize: (theme) => theme.typography.caption, fontWeight: 600, position: 'absolute', top: "-12px", left: "15px", }} />
-                    <Typography variant='subtitle2' mb={1} color='text.secondary' textTransform={"none"}> Font family</Typography>
-                    <Grid container spacing={2} mb={2}>
-                        {fonts.map((x) => (
-                            <Grid size={6} key={x.name}>
-                                <Button variant='outlined' color='secondary' onClick={() => handelFontChange(x.name)} sx={{ flexDirection: 'column', gap: 0.5, paddingY: 2 }} disableRipple={true} fullWidth={true}>
-                                    <Stack direction={"column"} alignItems={"center"} justifyContent={"center"} gap={1}>
-                                        <Typography sx={{fontSize:28}} component={"span"} color={x.name === themeFont ? "primary.main" : "text.secondary"}>
-                                            <FontsIcon />
-                                        </Typography>
-                                        <Typography variant='caption'>{x.name}</Typography>
-                                    </Stack>
-                                </Button>
-                            </Grid>
-                        ))}
-                    </Grid>
-                    <Typography variant='subtitle2' textTransform={"none"} color='text.secondary'>Size</Typography>
-                    <br />
-                    <br />
-                    <Box px={1} py={2}>
-                        <CustomeSlider marks={[
-                            { value: 12, label: "12px" },
-                            { value: 13 },
-                            { value: 14 },
-                            { value: 15 },
-                            { value: 16 },
-                            { value: 17 },
-                            { value: 18 },
-                            { value: 19 },
-                            { value: 20 },
-                        ]} value={themeFontSize} min={12} max={20} onChange={(_: any, value: number) => handelResizeFont(value)} />
-                    </Box>
-
-                </Paper>
 
                 <Paper sx={{
                     mb: 4,
@@ -236,7 +187,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                                     lineHeight: "0px",
                                 }
                             }}>
-                            <Typography sx={{fontSize:86}} color={themeLayout === "vertical" ? 'primary.main' : "text.secondary"}>
+                            <Typography sx={{ fontSize: 86 }} color={themeLayout === "vertical" ? 'primary.main' : "text.secondary"}>
                                 <Layout1Icon />
                             </Typography>
                         </Button>
@@ -253,7 +204,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                                     lineHeight: "0px",
                                 }
                             }}>
-                            <Typography sx={{fontSize:86}} color={themeLayout === "mini" ? 'primary.main' : "text.secondary"}>
+                            <Typography sx={{ fontSize: 86 }} color={themeLayout === "mini" ? 'primary.main' : "text.secondary"}>
                                 <Layout2Icon />
                             </Typography>
                         </Button>
@@ -269,7 +220,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                                     lineHeight: "0px",
                                 }
                             }}>
-                            <Typography sx={{fontSize:86}} color={themeLayout === "horizontal" ? 'primary.main' : "text.secondary"}>
+                            <Typography sx={{ fontSize: 86 }} color={themeLayout === "horizontal" ? 'primary.main' : "text.secondary"}>
                                 <Layout3Icon />
                             </Typography>
                         </Button>
@@ -296,7 +247,7 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                             <Grid key={x.name}>
                                 <Button onClick={() => handelColorChange(x.name)} disableRipple fullWidth sx={{
                                     px: 3.72,
-                                    fontSize:28,
+                                    fontSize: 28,
                                     py: 2.25,
                                     background: x.name === themeColorPresets ? alpha(x.main, 0.08) : "none",
                                     overflow: "hidden",
@@ -309,6 +260,57 @@ export default function SettingsDrawer({ open, onClose, onChangeSettings, themeO
                         ))}
                     </Grid>
                 </Paper>
+
+                <Paper sx={{
+                    boxShadow: "none",
+                    px: 2,
+                    py: 2,
+                    mb: 4,
+                    position: "relative",
+                    top: 0,
+                    left: 0,
+                    border: "1px solid",
+                    borderColor: (theme) => alpha(theme.palette.grey[500], 0.12),
+                    background: "transparent",
+                }}  >
+                    <Chip label="Fonts" variant='filled' color='secondary' size='small' sx={{ fontSize: (theme) => theme.typography.caption, fontWeight: 600, position: 'absolute', top: "-12px", left: "15px", }} />
+                    <Typography variant='subtitle2' mb={1} color='text.secondary' textTransform={"none"}> Font family</Typography>
+                    <Grid container spacing={2} mb={2}>
+                        {fonts.map((x) => (
+                            <Grid size={6} key={x.name}>
+                                <Button variant='outlined' color='secondary' onClick={() => handelFontChange(x.name)} sx={{ flexDirection: 'column', gap: 0.5, paddingY: 2 }} disableRipple={true} fullWidth={true}>
+                                    <Stack direction={"column"} alignItems={"center"} justifyContent={"center"} gap={1}>
+                                        <Typography sx={{ fontSize: 28 }} component={"span"} color={x.name === themeFont ? "primary.main" : "text.secondary"}>
+                                            <FontsIcon />
+                                        </Typography>
+                                        <Typography variant='caption'>{x.name}</Typography>
+                                    </Stack>
+                                </Button>
+                            </Grid>
+                        ))}
+                    </Grid>
+                    <Typography variant='subtitle2' textTransform={"none"} color='text.secondary'>Size</Typography>
+                    <br />
+                    <br />
+                    <Box px={1} py={2}>
+                        <CustomeSlider marks={[
+                            { value: 12, label: "12px" },
+                            { value: 13 },
+                            { value: 14 },
+                            { value: 15 },
+                            { value: 16 },
+                            { value: 17 },
+                            { value: 18 },
+                            { value: 19 },
+                            { value: 20 },
+                        ]} value={themeFontSize} min={12} max={20} onChange={(_: any, value: number) => handelResizeFont(value)} />
+                    </Box>
+
+                </Paper>
+
+
+
+
 
             </Box>
         </Drawer >

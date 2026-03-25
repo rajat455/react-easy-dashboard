@@ -1,6 +1,6 @@
 import './App.css'
 import { useMemo, useState } from 'react'
-import { navConfig, fonts, colorPresets, ThemeProvider, DashboardLayout, CustomeAvatar, SettingsDrawer, SettingsIcon, NotificationIcon, ContactIcon, defaultImages, WelcomeBanner } from "react-easy-dashboard"
+import { navConfig, fonts, colorPresets, ThemeProvider, DashboardLayout, CustomeAvatar, SettingsDrawer, SettingsIcon, NotificationIcon, ContactIcon, defaultImages, WelcomeBanner } from "./index"
 import { Badge, Box, Button, Container, Grid, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material'
 
 

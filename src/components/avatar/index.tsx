@@ -1,4 +1,5 @@
 import { Avatar, Box, useTheme, } from "@mui/material";
+import { useState } from "react";
 
 
 interface Props {
@@ -13,13 +14,14 @@ export default function CustomeAvatar({src, border = 0, width, height }: Props) 
     const theme = useTheme();
     const primaryMain = theme.palette.primary.main;
     const primaryLight = theme.palette.primary.light;
+    const [isImageLoaded, setisImageLoaded] = useState(false)
     let sx: object = {
         '&::before': {
             content: '""',
             position: 'absolute',
             minWidth: '150%',
             minHeight: '150%',
-            background: `conic-gradient( #fff  -50%, ${primaryLight}, ${primaryMain} 60%,${primaryLight} 100%, #fff 250%)`,
+            background: isImageLoaded ? `conic-gradient( #fff  -50%, ${primaryLight}, ${primaryMain} 60%,${primaryLight} 100%, #fff 250%)` : "#fff",
             animation: 'rotate 3s linear infinite',
         },
         '@keyframes rotate': {
@@ -58,7 +60,7 @@ export default function CustomeAvatar({src, border = 0, width, height }: Props) 
             <Avatar
                 alt="Avatar"
                 src={src}
-
+                onLoad={() => setisImageLoaded(true)}
                 sx={{
                     borderWidth: border / 2,
                     borderStyle: "solid",
