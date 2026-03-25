@@ -1,5 +1,5 @@
-import { Box, AppBar, IconButton, Container, Typography, useMediaQuery, useScrollTrigger, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, Stack, Badge } from "@mui/material";
-import { alpha, useTheme, Theme } from "@mui/material/styles";
+import { Box, AppBar, IconButton, Typography, useMediaQuery, useScrollTrigger, List, ListItem, ListItemButton, ListItemText, Divider, ListItemIcon, Stack, Badge } from "@mui/material";
+import { alpha, Theme, useTheme } from "@mui/material";
 import { HEADER } from "./config-layout";
 import { useSettings } from "../../context/settingContext";
 import { ContactIcon, LogoIcon, MenuIcon, NotificationIcon, SettingsIcon } from "../../theme/icons";
@@ -54,7 +54,7 @@ const logo = (theme: Theme) => {
 }
 const title = (theme: Theme) => "Dashboard"
 
-const icons = (theme: any, settings: SettingsValueProps) => {
+const icons = (theme: Theme, settings: SettingsValueProps) => {
     return <Stack direction={settings.reverseLayout ? "row-reverse" : "row"} alignItems="center" gap={0.75}>
         <IconButton
             sx={{ color: "text.secondary", fontSize: 24, "&:hover": { transform: "scale(1.04)" } }}

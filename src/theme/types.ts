@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { ColorPresets, Fonts } from "./themeUtils";
-import { Theme } from "@mui/material/styles";
+import { Theme } from "@mui/material";
 
 export type ThemeMode = "light" | "dark"
 export type ColorPreset = 'default' | "cyan" | "purple" | "blue" | "yellow" | "red"

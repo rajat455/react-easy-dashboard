@@ -1,4 +1,4 @@
-import { styled, useTheme, alpha, Theme, CSSObject } from '@mui/material/styles';
+import { styled, useTheme, alpha, Theme, CSSObject } from '@mui/material';
 import {
   Box,
   List,

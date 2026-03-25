@@ -1,4 +1,4 @@
-import { Avatar, Box, useTheme, } from "@mui/material";
+import { Avatar, Box, useTheme } from "@mui/material";
 import { useState } from "react";
 
 

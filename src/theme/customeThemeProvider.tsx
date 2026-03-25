@@ -3,7 +3,6 @@ import { createTheme, ThemeProvider, StyledEngineProvider, alpha, CssBaseline, P
 import { getTypography, getPalette, getCustomShadows, fonts as F, colorPresets as C, ColorPresets } from "./themeUtils";
 import { useSettings } from "../context/settingContext";
 import { ThemeMode, ThemeOptions } from "./types";
-import {Theme as DTheme} from "@mui/material/styles";
 
 interface Props {
     children: React.ReactNode;
@@ -11,8 +10,8 @@ interface Props {
 };
 
 
-declare module '@mui/material/styles' {
-    interface Theme extends DTheme {
+declare module '@mui/material' {
+    interface Theme {
         shadows: string[] & {
             primary: string;
             secondary: string;
@@ -55,7 +54,6 @@ export default function CustomeThemeProvider({ children, themeOptions }: Props) 
             shadows: customShadows as any,
             spacing: 8,
         });
-
         theme.components = {
             MuiCssBaseline: {
                 styleOverrides: {

@@ -1,5 +1,4 @@
 import { alpha, Slider } from "@mui/material";
-import { useSettings } from "../../context/settingContext";
 
 
 

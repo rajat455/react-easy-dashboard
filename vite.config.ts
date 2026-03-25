@@ -46,5 +46,11 @@ export default defineConfig({
                 },
             },
         },
+        commonjsOptions:{
+            types: ["node", "@mui/material", "@emotion/react", "@emotion/styled"],
+            "skipLibCheck": true,
+            "moduleResolution": "bundler"
+
+        }
     },
 });
