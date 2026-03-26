@@ -27,44 +27,44 @@ function App() {
       renderLogo: (theme) => {
         return <LogoIcon />
       },
-      renderNavItem: (item, theme, settings) => {
-        const vertical = settings.themeLayout === "vertical"
-        const mini = settings.themeLayout === "mini"
-        const horizontal = settings.themeLayout === "horizontal"
-        const { reverseLayout } = settings
+      // renderNavItem: (item, theme, settings) => {
+      //   const vertical = settings.themeLayout === "vertical"
+      //   const mini = settings.themeLayout === "mini"
+      //   const horizontal = settings.themeLayout === "horizontal"
+      //   const { reverseLayout } = settings
 
-        return <ListItem key={item.heading} disablePadding sx={{ display: 'block', mb: 0.5 }}>
-          <ListItemButton
-            selected={item.selected}
-            sx={{
-              minHeight: horizontal ? 32 : 44,
-              borderRadius: 1,
-              display: 'flex',
-              maxWidth: "100%",
-              flexDirection: !mini ? (reverseLayout ? "row-reverse" : "row") : "column",
-              justifyContent: !mini ? (reverseLayout ? "end" : 'start') : 'center',
-              alignItems: 'center',
-              paddingY: horizontal ? 0 : 0.5,
-              gap: (!mini && !reverseLayout && !horizontal ? 0.7 : !mini && reverseLayout && !horizontal ? 1.5 : 0.7),
-              paddingLeft: !mini && !horizontal ? (reverseLayout ? 1 : 1.5) : 1,
-              paddingRight: !mini && !horizontal ? (reverseLayout ? 1.5 : 1) : 1,
-              paddingTop: horizontal ? 0 : (!mini ? 0.5 : 1)
-            }}
-          >
-            <ListItemIcon sx={{
-              minWidth: 0,
-              mr: (!mini && !horizontal && vertical) ? (!reverseLayout ? 0.8 : 0) : 0,
-              justifyContent: 'center',
-              alignItems: "center",
-              color: item.selected ? (theme.palette.mode === "light" ? "primary.main" : "primary.light") : "text.secondary",
-              fontSize: 24
-            }}>
-              {item.icon}
-            </ListItemIcon>
-            <ListItemText style={{ marginTop: 0, marginBottom: 3, flex: "unset" }} primary={item.heading} primaryTypographyProps={{ minWidth: "max-content", fontWeight: item.selected ? (!mini ? 600 : 700) : (!mini ? 500 : 600), color: item.selected ? (theme.palette.mode === "light" ? "primary.main" : "primary.light") : "text.secondary", sx: { lineHeight: "16px", fontSize: !mini ? theme.typography.body2.fontSize : `calc(${theme.typography.subtitle2.fontSize} - 1px)` } }} />
-          </ListItemButton>
-        </ListItem>
-      },
+      //   return <ListItem key={item.heading} disablePadding sx={{ display: 'block', mb: 0.5 }}>
+      //     <ListItemButton
+      //       selected={item.selected}
+      //       sx={{
+      //         minHeight: horizontal ? 32 : 44,
+      //         borderRadius: 1,
+      //         display: 'flex',
+      //         maxWidth: "100%",
+      //         flexDirection: !mini ? (reverseLayout ? "row-reverse" : "row") : "column",
+      //         justifyContent: !mini ? (reverseLayout ? "end" : 'start') : 'center',
+      //         alignItems: 'center',
+      //         paddingY: horizontal ? 0 : 0.5,
+      //         gap: (!mini && !reverseLayout && !horizontal ? 0.7 : !mini && reverseLayout && !horizontal ? 1.5 : 0.7),
+      //         paddingLeft: !mini && !horizontal ? (reverseLayout ? 1 : 1.5) : 1,
+      //         paddingRight: !mini && !horizontal ? (reverseLayout ? 1.5 : 1) : 1,
+      //         paddingTop: horizontal ? 0 : (!mini ? 0.5 : 1)
+      //       }}
+      //     >
+      //       <ListItemIcon sx={{
+      //         minWidth: 0,
+      //         mr: (!mini && !horizontal && vertical) ? (!reverseLayout ? 0.8 : 0) : 0,
+      //         justifyContent: 'center',
+      //         alignItems: "center",
+      //         color: item.selected ? (theme.palette.mode === "light" ? "primary.main" : "primary.light") : "text.secondary",
+      //         fontSize: 24
+      //       }}>
+      //         {item.icon}
+      //       </ListItemIcon>
+      //       <ListItemText style={{ marginTop: 0, marginBottom: 3, flex: "unset" }} primary={item.heading} primaryTypographyProps={{ minWidth: "max-content", fontWeight: item.selected ? (!mini ? 600 : 700) : (!mini ? 500 : 600), color: item.selected ? (theme.palette.mode === "light" ? "primary.main" : "primary.light") : "text.secondary", sx: { lineHeight: "16px", fontSize: !mini ? theme.typography.body2.fontSize : `calc(${theme.typography.subtitle2.fontSize} - 1px)` } }} />
+      //     </ListItemButton>
+      //   </ListItem>
+      // },
       renderFooter: (theme) => {
         return <Box sx={{ px: 2, py: 5, textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: "center", justifyContent: 'center' }}>
           <IconButton size="small"
