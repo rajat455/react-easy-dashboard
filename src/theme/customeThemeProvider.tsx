@@ -1,5 +1,5 @@
 import React from "react";
-import { createTheme, ThemeProvider, StyledEngineProvider, alpha, CssBaseline, Palette, Shape } from "@mui/material";
+import { createTheme, ThemeProvider, StyledEngineProvider, alpha, CssBaseline, Palette, Shape, Theme } from "@mui/material";
 import { getTypography, getPalette, getCustomShadows, fonts as F, colorPresets as C, ColorPresets } from "./themeUtils";
 import { useSettings } from "../context/settingContext";
 import { ThemeMode, ThemeOptions } from "./types";
@@ -26,14 +26,22 @@ declare module '@mui/material' {
         palette: Palette[] & {
             mode: ThemeMode;
             primary: ColorPresets;
-            secondary:ColorPresets;
+            secondary: ColorPresets;
+            info: ColorPresets;
+            error: ColorPresets;
+            success: ColorPresets;
+            warning: ColorPresets;
+            background: { neutral: string, default: string, paper: string };
+            common: { commonWhite: string, commonBlack: string };
+            action: { active: string, hover: string, selected: string, disabledBackground: string, disable: string, focus: string }
+            text: { primary: string, secondary: string, disabled: string };
             grey: any;
-            common: any;
-            background: any;
             divider: any;
+
 
         },
         shape: Shape;
+        spcing: number;
     }
 }
 
@@ -47,13 +55,14 @@ export default function CustomeThemeProvider({ children, themeOptions }: Props) 
     const customShadows: any = getCustomShadows(palette);
     const baseTheme: any = React.useMemo(() => {
 
-        const theme: any = createTheme({
+        const theme: Theme = createTheme({
             palette: palette,
             typography: getTypography(fontFamily.main, themeFontSize),
             shape: { borderRadius: 8 },
             shadows: customShadows as any,
             spacing: 8,
         });
+
         theme.components = {
             MuiCssBaseline: {
                 styleOverrides: {
@@ -97,11 +106,14 @@ export default function CustomeThemeProvider({ children, themeOptions }: Props) 
             MuiButton: {
                 styleOverrides: {
                     root: {
-                        borderRadius: (theme.shape.borderRadius) * 2,
+                        borderRadius: ((theme.shape.borderRadius as any) * 2) +"px",
                         fontWeight: 700,
                         textTransform: 'capitalize',
                     },
                     outlined: {
+                        border: `1px solid ${theme.palette.divider}`,
+                    },
+                    contained: {
                         border: `1px solid ${theme.palette.divider}`,
                     }
                 }
@@ -146,7 +158,7 @@ export default function CustomeThemeProvider({ children, themeOptions }: Props) 
     return (
         <StyledEngineProvider injectFirst>
             <ThemeProvider theme={baseTheme}>
-            <CssBaseline enableColorScheme />
+                <CssBaseline enableColorScheme />
                 {children}
             </ThemeProvider>
         </StyledEngineProvider>

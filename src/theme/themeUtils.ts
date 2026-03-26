@@ -33,7 +33,7 @@ export interface ColorPresets {
     darker: string;
 }
 
-export const colorPresets :ColorPresets[]= [
+export const colorPresets: ColorPresets[] = [
     { name: 'default', main: '#00A76F', light: "#5BE49B", dark: "#007867", lighter: "#C8FAD6", contrastText: "#FFFFFF", darker: "#004B50" },
     { name: 'cyan', main: '#078DEE', light: "#68CDF9", dark: "#0351AB", lighter: "#CCF4FE", darker: "#012972", contrastText: "#FFFFFF" },
     { name: 'purple', main: '#7635dc', dark: "#431A9E", light: "#B985F4", lighter: "#EBD6FD", darker: "#200A69", contrastText: "#FFFFFF" },
@@ -41,14 +41,13 @@ export const colorPresets :ColorPresets[]= [
     { name: 'yellow', main: '#fda92d', light: "#FED680", dark: "#B66816", lighter: "#FEF4D4", darker: "#793908", contrastText: paletteGray[800] },
     { name: 'red', main: '#FF3030', light: "#FFC1AC", dark: "#B71833", lighter: "#FFE3D5", darker: "#7A0930", contrastText: "#FFFFFF" },
 ]
-export const getPalette = (colorPresets:ColorPresets[], themeMode: ThemeMode, themeColorPresets: ColorPreset, isContrast: boolean) => {
+export const getPalette = (colorPresets: ColorPresets[], themeMode: ThemeMode, themeColorPresets: ColorPreset, isContrast: boolean) => {
     const primaryColor = colorPresets.find((c) => c.name === themeColorPresets) || colorPresets[0];
     return {
         mode: themeMode,
         primary: {
             ...primaryColor,
         },
-        grey: { ...paletteGray },
         secondary: {
             main: themeMode === "light" ? paletteGray[800] : commonWhite,
             contrastText: themeMode === "light" ? commonWhite : paletteGray[800],
@@ -94,12 +93,10 @@ export const getPalette = (colorPresets:ColorPresets[], themeMode: ThemeMode, th
             paper: themeMode === 'light' ? commonWhite : paletteGray[800],
             neutral: themeMode === "light" ? paletteGray[200] : "#28323D"
         },
-        divider: alpha(paletteGray[500], 0.12),
         common: {
             black: commonBlack,
             white: commonWhite
         },
-
         action: {
             active: paletteGray[500],
             hover: alpha(paletteGray[500], 0.16),
@@ -112,7 +109,10 @@ export const getPalette = (colorPresets:ColorPresets[], themeMode: ThemeMode, th
             primary: themeMode === 'light' ? paletteGray[800] : commonWhite,
             secondary: themeMode === "light" ? paletteGray[600] : paletteGray[500],
             disabled: themeMode === "light" ? paletteGray[500] : paletteGray[600]
-        }
+        },
+        grey: { ...paletteGray },
+        divider: alpha(paletteGray[500], 0.33),
+
     }
 }
 
