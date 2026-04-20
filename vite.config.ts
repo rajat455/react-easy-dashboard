@@ -32,6 +32,7 @@ export default defineConfig({
                 '@mui/icons-material',
                 '@mui/lab',
                 'framer-motion',
+                '@mui/x-data-grid',
             ],
             output: {
                 globals: {
@@ -43,14 +44,9 @@ export default defineConfig({
                     '@emotion/styled': 'EmotionStyled',
                     '@mui/icons-material': 'MuiIconsMaterial',
                     '@mui/lab': 'MuiLab',
+                    '@mui/x-data-grid': 'MuiXDataGrid'
                 },
             },
         },
-        commonjsOptions:{
-            types: ["node", "@mui/material", "@emotion/react", "@emotion/styled"],
-            "skipLibCheck": true,
-            "moduleResolution": "bundler"
-
-        }
     },
 });
