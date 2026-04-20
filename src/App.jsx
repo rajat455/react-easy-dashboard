@@ -1,8 +1,7 @@
 import './App.css'
 import { useState } from 'react'
-import { navConfig, ThemeProvider, DashboardLayout, SettingsDrawer, defaultImages, WelcomeBanner } from "../dist/index"
+import { navConfig, ThemeProvider, DashboardLayout, SettingsDrawer, defaultImages, WelcomeBanner } from "react-easy-dashboard"
 import { Button, Chip, Container, Grid, IconButton, Typography } from '@mui/material'
-import CustomeDataGrid from './components/customeDataGrid'
 import { GridMoreVertIcon } from '@mui/x-data-grid'
 
 function App() {
